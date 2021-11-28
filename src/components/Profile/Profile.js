@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
 import s from './Profile.module.css';
-
-console.log(s);
-
 export default function Profile(props) {
   const { avatar, username, tag, location, stats } = props;
   return (
