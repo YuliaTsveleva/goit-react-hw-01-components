@@ -14,9 +14,11 @@ export default function TransactionHistory({ items }) {
     <table className={s.transactionHistory}>
       <thead className={s.tableHead}>
         <tr>
-          <th className={s.headCell}>{headNamesArray[0]}</th>
-          <th className={s.headCell}>{headNamesArray[1]}</th>
-          <th className={s.headCell}>{headNamesArray[2]}</th>
+          {headNamesArray.map(item => (
+            <th key={item} className={s.headCell}>
+              {item}
+            </th>
+          ))}
         </tr>
       </thead>
       <tbody className={s.tableBody}>
