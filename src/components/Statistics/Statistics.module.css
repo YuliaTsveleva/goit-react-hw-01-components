@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 350px;
+  margin: 0 auto 50px;
   background-color: rgb(226, 237, 248);
 }
 
