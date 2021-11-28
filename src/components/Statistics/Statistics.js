@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
-
 export default function Statistics(props) {
   const { title, stats } = props;
   return (
@@ -13,7 +12,7 @@ export default function Statistics(props) {
             className={s.listItem}
             style={{
               backgroundColor:
-                'rgba(66, 90, 105,' + (item.percentage + 30) / 100 + ')',
+                'rgba(66, 90, 105,' + (item.percentage + 40) / 100 + ')',
             }}
           >
             <span className={s.label}>{item.label}</span>
@@ -24,13 +23,6 @@ export default function Statistics(props) {
     </section>
   );
 }
-
-// const divStyle = {
-//   color: 'blue',
-//   backgroundImage: 'url(' + imgUrl + ')',
-// };
-// function HelloWorldComponent() {
-//   return <div style={divStyle}>Hello World!</div>;
 
 Statistics.propTypes = {
   title: PropTypes.string,

@@ -10,7 +10,6 @@ export default function TransactionHistory({ items }) {
     Object.keys(items[0])[3].charAt(0).toUpperCase() +
       Object.keys(items[0])[3].slice(1),
   ];
-  console.log(items[0]);
   return (
     <table className={s.transactionHistory}>
       <thead className={s.tableHead}>
@@ -44,13 +43,6 @@ export default function TransactionHistory({ items }) {
     </table>
   );
 }
-
-// <td className={item.type === 'invoice' && s.bodyCellInvoice}></td>
-
-// className={[item.type === 'invoice' && s.bodyCellInvoice, [item.type === 'payment' && s.bodyCellPayment]
-//   .filter(e => !!e)
-//   .join(' ')
-// }
 
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
