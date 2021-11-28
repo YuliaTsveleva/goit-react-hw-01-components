@@ -21,7 +21,7 @@ export default function TransactionHistory({ items }) {
       </thead>
       <tbody className={s.tableBody}>
         {items.map(item => (
-          <tr key={item.id}>
+          <tr key={item.id} className={s.tableRaw}>
             <td
               className={[
                 s.bodyCell,
