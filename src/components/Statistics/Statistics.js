@@ -8,7 +8,14 @@ export default function Statistics(props) {
       {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.statList}>
         {stats.map(item => (
-          <li key={item.id} className={s.listItem}>
+          <li
+            key={item.id}
+            className={s.listItem}
+            style={{
+              backgroundColor:
+                'rgba(66, 90, 105,' + (item.percentage + 30) / 100 + ')',
+            }}
+          >
             <span className={s.label}>{item.label}</span>
             <span className={s.percentage}>{item.percentage}%</span>
           </li>
@@ -17,6 +24,13 @@ export default function Statistics(props) {
     </section>
   );
 }
+
+// const divStyle = {
+//   color: 'blue',
+//   backgroundImage: 'url(' + imgUrl + ')',
+// };
+// function HelloWorldComponent() {
+//   return <div style={divStyle}>Hello World!</div>;
 
 Statistics.propTypes = {
   title: PropTypes.string,

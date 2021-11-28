@@ -10,6 +10,7 @@ export default function TransactionHistory({ items }) {
     Object.keys(items[0])[3].charAt(0).toUpperCase() +
       Object.keys(items[0])[3].slice(1),
   ];
+  console.log(items[0]);
   return (
     <table className={s.transactionHistory}>
       <thead className={s.tableHead}>
@@ -19,10 +20,22 @@ export default function TransactionHistory({ items }) {
           <th className={s.headCell}>{headNamesArray[2]}</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className={s.tableBody}>
         {items.map(item => (
           <tr key={item.id}>
-            <td className={s.bodyCell}>{item.type}</td>
+            <td
+              className={[
+                s.bodyCell,
+                item.type === 'invoice' && s.bodyCellInvoice,
+                item.type === 'payment' && s.bodyCellPayment,
+                item.type === 'withdrawal' && s.bodyCellWithdrawal,
+                item.type === 'deposit' && s.bodyCellDeposit,
+              ]
+                .filter(e => !!e)
+                .join(' ')}
+            >
+              {item.type}
+            </td>
             <td className={s.bodyCell}>{item.amount}</td>
             <td className={s.bodyCell}>{item.currency}</td>
           </tr>
@@ -31,6 +44,13 @@ export default function TransactionHistory({ items }) {
     </table>
   );
 }
+
+// <td className={item.type === 'invoice' && s.bodyCellInvoice}></td>
+
+// className={[item.type === 'invoice' && s.bodyCellInvoice, [item.type === 'payment' && s.bodyCellPayment]
+//   .filter(e => !!e)
+//   .join(' ')
+// }
 
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
