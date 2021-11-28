@@ -5,6 +5,12 @@
   padding: 5px 10px;
 }
 
+.listItem:hover,
+.listItem:focus {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 15px rgb(13, 39, 54);
+}
+
 .listItem:not(:last-child) {
   margin-bottom: 20px;
 }
